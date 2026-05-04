@@ -1,0 +1,9 @@
+# Build outputs
+ps3.lst
+ps3.p
+ps3built.bin
+ps3built.prev.bin
+
+# Optional temporary files
+*.bak
+*.tmp
