@@ -32788,7 +32788,7 @@ loc_191E4:
 Obj_LayaWorldSubmersible:
 	move.w	#$560, $8(a5)
 	move.w	#$200, $A(a5)
-	move.b	#1, $E(a6)	; this should be a5, not a6
+	move.b	#1, $E(a5)	; this should be a5, not a6
 	bra.s	loc_19210
 
 	rts
