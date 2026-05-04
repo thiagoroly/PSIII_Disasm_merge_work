@@ -1095,6 +1095,7 @@ ConvertLegendToNeiWpns:
 loc_EDE:
 	lea	(a0,d7.w), a2
 	move.w	(a2), d6
+	beq.s	ConvertLegendToNeiWpns_NextChar
 	; There's no check if the character's item number is 0. d6 which now holds the number of items will be subtracted and repeat the step right below because it needs to
 	; loop through every item. If it's 0, it will subtract 2 and it will result in a negative number and it will loop many items and overwrite some other RAM addresses.
 	; This bug is known as the Pron Glitch.
@@ -1119,6 +1120,8 @@ loc_F08:
 loc_F0E:
 	subq.w	#2, d6
 	bne.s	loc_EE4
+
+ConvertLegendToNeiWpns_NextChar:
 	subi.w	#$20, d7
 	bcc.s	loc_EDE
 	rts
