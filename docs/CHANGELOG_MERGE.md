@@ -100,6 +100,43 @@ A rotina estava escrevendo em `a6`, mas o objeto atual usa `a5`. A correção fa
 
 ---
 
+### 003 - Corrigir Pron Glitch na conversão das armas Nei
+
+**Status:** aplicado
+
+**Categoria:** bugfix / inventário / evento final
+
+**Local:**
+
+- `ps3.asm`
+- rotina `ConvertLegendToNeiWpns`
+
+**Alteração:**
+
+A rotina agora verifica se o personagem possui `0` itens antes de tentar percorrer o inventário.
+
+Foi adicionada uma ramificação para pular diretamente para o próximo personagem quando o inventário está vazio.
+
+**Origem:**
+
+- Comentário existente na própria disassembly.
+- Bugfix também listado na retradução.
+
+**Motivo:**
+
+A rotina original subtraía do contador de itens mesmo quando o personagem tinha inventário vazio. Isso podia fazer o loop acessar regiões erradas da RAM e sobrescrever dados indevidos.
+
+Esse problema é conhecido como **Pron Glitch**.
+
+**Teste recomendado:**
+
+- Confirmar que a ROM inicia normalmente.
+- Confirmar que New Game funciona.
+- Confirmar que o menu abre.
+- Teste completo pendente com save avançado próximo da conversão das armas lendárias em armas Nei.
+
+---
+
 ## Alterações planejadas
 
 ### Bugfixes a avaliar
