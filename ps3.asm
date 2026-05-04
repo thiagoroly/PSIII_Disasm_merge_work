@@ -3989,9 +3989,10 @@ loc_3322:
 -
 	move.w	(a1)+, (a2)+	; shift items back by one
 	dbf	d3, -
-	bra.s	loc_3314	; This one branches incorrectly... The whole process ends prematurely making Mieu and Wren have duplicate items because
+						; This one branches incorrectly... The whole process ends prematurely making Mieu and Wren have duplicate items because
 						; the next generation characters start with some of these items. Make sure you save the values and the counter for the items and have it branch to loc_32E2 so
 						; that it can continue and remove the remaining items if any.
+	bra.s	loc_32D8	; fixed: rescan current character after removing an item	
 InitCharStats:
 	moveq	#0, d0
 	move.l	d0, (a0)
