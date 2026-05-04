@@ -11766,7 +11766,7 @@ MenuItem_ActionUse:
 	bmi.s	loc_8BDA	; if sign bit is set, branch (special action)
 	tst.b	$C(a3)		; is technique effectiveness 0?
 	beq.s	MenuItem_NoUse	; if so, branch
-	cmpi.b	#ItemID_ShortSwd, d7	; There's a bug here: cmpi.b should be replaced with cmpi.w. This explains the reason you can use gear with techniques
+	cmpi.w	#ItemID_ShortSwd, d7	; There's a bug here: cmpi.b should be replaced with cmpi.w. This explains the reason you can use gear with techniques
 									; outside of battle (e.g. Force Shield), however you're not supposed to.
 	bcc.s	MenuItem_NoUse	; don't do anything if past Short Sword
 	cmpi.b	#TechID_Ner, d0	; are we past the healing techniques?
