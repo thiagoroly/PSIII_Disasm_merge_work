@@ -1,11 +1,12 @@
 {
-  "files.encoding": "windows1252",
+  "files.encoding": "utf8",
   "files.eol": "\r\n",
   "editor.tabSize": 4,
   "editor.insertSpaces": false,
   "files.associations": {
     "*.asm": "m68k-as",
-    "*.inc": "m68k"
+    "*.inc": "m68k",
+    "*.md": "markdown"
   },
   "editor.rulers": [80, 120],
   "diffEditor.ignoreTrimWhitespace": false
